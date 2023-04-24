@@ -18,11 +18,15 @@ export default defineConfig({
     fixedHeader: false,
     fixSiderbar: true,
     colorWeak: false,
-    title: 'Umi CRM',
+    title: 'Rast',
     locale: true,
     pwa: false,
     logo: 'https://img.icons8.com/ios-filled/50/ffffff/customer-insight.png',
     iconfontUrl: '',
+  },
+  theme: {
+    // Конфигурация темы изменяет значения по умолчанию переменных LESS, используемых Ant.
+    'primary-color': '#1895bb',
   },
   routes: routes, // импортировали пути из файла routes
   fastRefresh: {},

@@ -1,24 +1,38 @@
 export default [
   {
-    path: '/', // если введено localhost:8000/
-    redirect: '/app/login', // то перенаправит немедленно на localhost:8000/app/login
+    path: '/login',
+    component: '@/pages/Login',
+    layout: false, // сделает макет по умолчанию не отображаемым на странице входа.
   },
   {
-    path: '/app',
-    component: '@/layouts/Header',
-    routes: [
-      {
-        exact: false, // определяем, должен ли путь быть точным или нет
-        path: '/app/login',
-        component: '@/pages/Login',
-      },
-      {
-        path: '/app/home',
-        component: '@/pages/Home',
-      },
-    ],
+    path: '/',
+    name: 'home', // свойства определяют, как домашняя страница будет отображаться в боковом меню.
+    icon: 'home', // свойства определяют, как домашняя страница будет отображаться в боковом меню. Ant Design предоставляет значок
+    component: '@/pages/Home',
   },
 ];
+
+// export default [
+//   {
+//     path: '/', // если введено localhost:8000/
+//     redirect: '/app/login', // то перенаправит немедленно на localhost:8000/app/login
+//   },
+//   {
+//     path: '/app',
+//     component: '@/layouts/Header',
+//     routes: [
+//       {
+//         exact: false, // определяем, должен ли путь быть точным или нет
+//         path: '/app/login',
+//         component: '@/pages/Login',
+//       },
+//       {
+//         path: '/app/home',
+//         component: '@/pages/Home',
+//       },
+//     ],
+//   },
+// ];
 
 // export default [
 //   {
