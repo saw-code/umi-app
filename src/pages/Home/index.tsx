@@ -1,16 +1,57 @@
-import React from 'react';
 import styles from './index.less';
-import { history } from 'umi';
+import { PageContainer } from '@ant-design/pro-layout';
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
+import { ProTable } from '@ant-design/pro-table';
+import { FormattedMessage } from 'umi';
 
-export default function Page() {
-  const { query } = history.location;
-  const { code } = query as { code: string };
+// Теперь мы добавим некоторую основную информацию к содержимому PageContainer. Мы
+// хочу, чтобы когда пользователь входит в приложение, он видел последующее приветствие
+// по имени, роли и аватару
 
-  alert(`code=${code}`);
-
+export default function IndexPage() {
   return (
-    <div>
-      <h1 className={styles.title}>Page /Home/index</h1>
-    </div>
+    <PageContainer
+      header={{ title: undefined }}
+      style={{ minHeight: '90vh' }}
+      content={
+        <div className={styles.pageHeaderContent}>
+          <div className={styles.avatar}>
+            <Avatar
+              alt="avatar"
+              className={styles.avatarComponent}
+              size={{
+                xs: 64,
+                sm: 64,
+                md: 64,
+                lg: 64,
+                xl: 80,
+                xxl: 100,
+              }}
+              icon={<UserOutlined />}
+            />
+          </div>
+          <div className={styles.content}>
+            <div className={styles.contentTitle}>
+              <FormattedMessage id="greetings.hello" />
+              John Doe, <FormattedMessage id="greetings.welcome" />.
+            </div>
+            <div>Inside Sales | Umi Group</div>
+          </div>
+        </div>
+      }
+    >
+      {/*<div style={{width: '100%'}}>*/}
+      {/*  <ProTable<any>*/}
+      {/*    headerTitle={<FormattedMessage id="home.recents" />}*/}
+      {/*    pagination={{pageSize: 5}}*/}
+      {/*    rowKey="id"*/}
+      {/*    search={false}*/}
+      {/*  />*/}
+      {/*</div>*/}
+    </PageContainer>
   );
 }
+
+// Здесь мы добавили компонент Avatar из antd, а затем приветствие,
+// имя пользователя и роль.

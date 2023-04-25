@@ -10,6 +10,24 @@ export default [
     icon: 'home', // свойства определяют, как домашняя страница будет отображаться в боковом меню. Ant Design предоставляет значок
     component: '@/pages/Home',
   },
+  {
+    path: '/customers',
+    name: 'customers',
+    icon: 'user',
+    component: '@/pages/Customers',
+  },
+  {
+    path: '/opportunities',
+    name: 'opportunities',
+    icon: 'AccountBook',
+    component: '@/pages/Opportunities',
+  },
+  {
+    path: '/reports',
+    name: 'reports',
+    icon: 'BarChartOutlined',
+    component: '@/pages/Reports',
+  },
 ];
 
 // export default [
