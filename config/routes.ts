@@ -28,6 +28,10 @@ export default [
     icon: 'BarChartOutlined',
     component: '@/pages/Reports',
   },
+  {
+    path: '/opportunity/:id',
+    component: '@/pages/OpportunityDetail',
+  },
 ];
 
 // export default [
