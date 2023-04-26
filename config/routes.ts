@@ -32,6 +32,13 @@ export default [
     path: '/opportunity/:id',
     component: '@/pages/OpportunityDetail',
   },
+  {
+    path: '/workflow',
+    name: 'workflow',
+    access: 'canAdmin',
+    icon: 'DeploymentUnitOutlined',
+    component: '@/pages/Workflow',
+  },
 ];
 
 // export default [

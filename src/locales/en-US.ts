@@ -51,4 +51,7 @@ export default {
   'table.activity.createdBy': 'User',
   'table.disable': 'Disable',
   'table.confirm': 'Do you want to disable the record?',
+  'table.workflow.name': 'Name',
+  'table.workflow.type': 'Type',
+  'table.workflow.table': 'Table',
 };

@@ -1,10 +1,24 @@
 import { Avatar, Dropdown, Menu } from 'antd';
 import styles from './index.less';
-import { LogoutOutlined } from '@ant-design/icons';
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
+import { useModel } from 'umi';
+import React from 'react';
 
 export default function HeaderMenu() {
+  // @ts-ignore
+  const { initialState, setInitialState } = useModel('@@initialState');
+
+  const userLogout = () => {
+    initialState?.logout?.();
+    // @ts-ignore
+    setInitialState((state) => ({
+      ...state,
+      currentUser: undefined,
+    }));
+  };
+
   const options = (
-    <Menu className={styles.menu}>
+    <Menu className={styles.menu} onClick={userLogout}>
       <Menu.Item key="center">
         <LogoutOutlined /> Logout
       </Menu.Item>
@@ -14,8 +28,14 @@ export default function HeaderMenu() {
   return (
     <Dropdown className={styles.dropdown} overlay={options}>
       <span>
-        <Avatar size="small" className={styles.avatar} />
-        <span className={`${styles.name} anticon`}>Емельянов Сергей</span>
+        <Avatar
+          size="small"
+          className={styles.avatar}
+          icon={<UserOutlined />}
+        />
+        <span className={`${styles.name} anticon`}>
+          {initialState?.currentUser?.name}
+        </span>
       </span>
     </Dropdown>
   );

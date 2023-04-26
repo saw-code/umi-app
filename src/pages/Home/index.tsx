@@ -5,12 +5,16 @@ import { Avatar } from 'antd';
 import { ProTable } from '@ant-design/pro-table';
 import { FormattedMessage } from 'umi';
 import columns from '../Opportunities/columns';
+import initialState from '@@/plugin-initial-state/models/initialState';
+import { useModel } from '@@/plugin-model/useModel';
 
 // Теперь мы добавим некоторую основную информацию к содержимому PageContainer. Мы
 // хочу, чтобы когда пользователь входит в приложение, он видел последующее приветствие
 // по имени, роли и аватару
 
 export default function IndexPage() {
+  const { initialState } = useModel('@@initialState');
+
   return (
     <PageContainer
       header={{ title: undefined }}
@@ -35,10 +39,13 @@ export default function IndexPage() {
           <div className={styles.content}>
             <div className={styles.contentTitle}>
               <FormattedMessage id="greetings.hello" />
-              Емельянов Сергей,
+              {initialState?.currentUser?.name},{' '}
               <FormattedMessage id="greetings.welcome" />.
             </div>
-            <div>Inside Sales | Umi Group</div>
+            <div>
+              {initialState?.currentUser?.role?.title} |{' '}
+              {initialState?.currentUser?.company}
+            </div>
           </div>
         </div>
       }
