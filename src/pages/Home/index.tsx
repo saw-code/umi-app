@@ -4,8 +4,6 @@ import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import { ProTable } from '@ant-design/pro-table';
 import { FormattedMessage } from 'umi';
-import columns from '../Opportunities/columns';
-import initialState from '@@/plugin-initial-state/models/initialState';
 import { useModel } from '@@/plugin-model/useModel';
 
 // Теперь мы добавим некоторую основную информацию к содержимому PageContainer. Мы
