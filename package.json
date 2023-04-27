@@ -1,12 +1,15 @@
 {
   "private": true,
+  "homepage": "https://saw-code.github.io/umi-app",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test --runInBand",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -26,6 +29,7 @@
     "@ant-design/pro-table": "^3.6.2",
     "antd": "^4.0.0",
     "bizcharts": "^4.1.22",
+    "gh-pages": "^5.0.0",
     "jest": "^22.1.4",
     "react": "17.x",
     "react-dom": "17.x",
