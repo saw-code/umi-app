@@ -88,6 +88,7 @@ const columns: ProColumns<Opportunity>[] = [
     render: (_, record, __, action) => [
       <a
         key="editable"
+        id="editopportunity"
         onClick={() => {
           action?.startEditable(record.id as number);
         }}
