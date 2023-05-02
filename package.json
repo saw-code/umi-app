@@ -6,9 +6,7 @@
     "build": "umi build",
     "postinstall": "umi generate tmp",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test:coverage": "umi-test --coverage"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
