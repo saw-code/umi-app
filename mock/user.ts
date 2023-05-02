@@ -17,19 +17,19 @@ const login = (req: Request, res: Response) => {
       company: 'Rast',
       role: {
         id: 1,
-        title: 'Director',
+        title: 'Tech Director',
       },
       isLoggedIn: true,
     };
     res.json(user.currentUser);
-  } else if (email == 'marry@doe.com' && password == 'admin') {
+  } else if (email == 'iam@onnet.su' && password == '54321') {
     user.currentUser = {
       id: 1,
-      name: 'Marry Doe',
-      company: 'Umi Group',
+      name: 'Kirill Sysoev',
+      company: 'Onnet',
       role: {
         id: 0,
-        title: 'Sales Manager',
+        title: 'Developer',
       },
       isLoggedIn: true,
     };

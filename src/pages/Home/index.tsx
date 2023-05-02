@@ -36,7 +36,7 @@ export default function IndexPage() {
           </div>
           <div className={styles.content}>
             <div className={styles.contentTitle}>
-              <FormattedMessage id="greetings.hello" />
+              <FormattedMessage id="greetings.hello" />,{' '}
               {initialState?.currentUser?.name},{' '}
               <FormattedMessage id="greetings.welcome" />.
             </div>
