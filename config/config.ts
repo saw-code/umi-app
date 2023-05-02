@@ -28,6 +28,9 @@ export default defineConfig({
     // Конфигурация темы изменяет значения по умолчанию переменных LESS, используемых Ant.
     'primary-color': '#1895bb',
   },
+  define: {
+    API_URL: process.env.API_HOST,
+  },
   routes: routes, // импортировали пути из файла routes
   fastRefresh: {},
 });
